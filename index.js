@@ -15,10 +15,9 @@ const load = () => {
 };
 
 const loop = () => {
-  sprite.translate("x", 20);
+  sprite.translate("x", 4);
+  sprite.translate("y", 4);
 };
-
-Game.gameLoop(loop);
 
 const config = {
   width: 800,

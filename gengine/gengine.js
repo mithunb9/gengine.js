@@ -3,6 +3,12 @@ export class Game {
     this.canvas = canvas;
     this.ctx = ctx;
     this.config = config;
+    this.gameLoop = this.gameLoop.bind(this);
+  }
+
+  gameLoop() {
+    this.config.methods.loop();
+    window.requestAnimationFrame(this.gameLoop);
   }
 
   init() {
@@ -19,10 +25,5 @@ export class Game {
     console.log("gengine.js initalized");
 
     this.gameLoop();
-  }
-
-  gameLoop(loop) {
-    loop();
-    window.requestAnimationFrame(this.gameLoop);
   }
 }

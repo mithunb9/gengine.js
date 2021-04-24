@@ -45,7 +45,9 @@ export class Sprite {
         this.ctx.fillRect(this.x, this.y, this.width, this.height);
         break;
       case "y":
-        this.ctx.fillRect(this.x, this.y + value, this.width, this.height);
+        this.remove();
+        this.y = this.y + value;
+        this.ctx.fillRect(this.x, this.y, this.width, this.height);
         break;
     }
   }
