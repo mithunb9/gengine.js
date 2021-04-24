@@ -52,3 +52,7 @@ export class Sprite {
     }
   }
 }
+
+export class FlatSprite extends Sprite {}
+
+export class RigidSprite extends Sprite {}
