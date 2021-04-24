@@ -28,7 +28,9 @@ export class Sprite {
   /**
    * Removes a sprite.
    */
-  remove() {}
+  remove() {
+    this.ctx.clearRect(this.x, this.y, this.width, this.height);
+  }
 
   /**
    * Translates the sprite on a given axis of x or y.
@@ -38,7 +40,9 @@ export class Sprite {
   translate(direction, value) {
     switch (direction) {
       case "x":
-        this.ctx.fillRect(this.x + value, this.y, this.width, this.height);
+        this.remove();
+        this.x = this.x + value;
+        this.ctx.fillRect(this.x, this.y, this.width, this.height);
         break;
       case "y":
         this.ctx.fillRect(this.x, this.y + value, this.width, this.height);

@@ -5,15 +5,20 @@ import { clamp, Clamper } from "./gengine/utils/utils.js";
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
+canvas.style.backgroundColor = "gray";
+
+const sprite = new Sprite(ctx, 30, 30, 50, 50, "rgba(0, 0, 0, 1)");
+sprite.draw();
+
 const load = () => {
   console.log("Assets Loaded");
 };
 
 const loop = () => {
-  const sprite = new Sprite(ctx, 30, 30, 50, 50, "rgba(0, 0, 0, 1)");
-  sprite.draw();
-  sprite.translate("x", 200);
+  sprite.translate("x", 20);
 };
+
+Game.gameLoop(loop);
 
 const config = {
   width: 800,

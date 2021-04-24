@@ -21,8 +21,8 @@ export class Game {
     this.gameLoop();
   }
 
-  gameLoop() {
-    this.config.methods.loop();
-    // this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+  gameLoop(loop) {
+    loop();
+    window.requestAnimationFrame(this.gameLoop);
   }
 }
